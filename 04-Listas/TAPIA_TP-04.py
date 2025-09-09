@@ -181,3 +181,33 @@
 # print(f"El promedio de temperaturas maximas es: {round(promedioMax,2)} grados")
 # print(f"El promedio de temperaturas minimas es: {round(promedioMin,2)} grados")
 # print(f"El dia con mayor amplitud termica fue el {diaMayorAmplitud} con {mayorAmplitud} puntos")
+
+# Ejercicio 8
+
+# Utilizo el paquete statistics de python para utilizar funciones
+from statistics import mean
+# Importo modulo random para utilizar metodo randint()
+import random
+# Inicializo lista con dias de la semana
+alumnos = ["Juan", "Pedro", "Cristian", "Maria", "Jorge"]
+materias = ["Programacion", "Matematica", "Sistemas Operativos"]
+# Inicializo lista que va a contener las notas
+notas = []
+# Recorro la cantidad de estudiantes que hay y le cargo notas a la lista
+for alumno in range(len(alumnos)):
+    notas.append([random.randint(1,10),random.randint(1,10),random.randint(1,10)])
+# Calculo el promedio de cada nota para cada materia
+promedioMaterias = [mean([nota[materia] for nota in notas]) for materia in range(len(materias))]
+# Muestro en pantalla a los alumnos con sus notas y sus promedios
+print(f"####################")
+print(f"#  CALIFICACIONES  #")
+print(f"####################\n")
+for alumno, nota in enumerate(notas):
+    promedioAlumno = mean(notas[alumno])
+    print(f" Alumno: {alumnos[alumno]} \n Notas: {notas[alumno]} \n Promedio: {round(promedioAlumno,2)}\n")
+print(f"##############################################")
+print(f"# Promedio de calificaciones de cada materia #")
+print(f"##############################################")
+for materia in range(len(materias)):
+    print(f"           {materias[materia]}: {promedioMaterias[materia]}")
+print(f"##############################################")
