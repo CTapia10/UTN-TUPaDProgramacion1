@@ -182,32 +182,72 @@
 # print(f"El promedio de temperaturas minimas es: {round(promedioMin,2)} grados")
 # print(f"El dia con mayor amplitud termica fue el {diaMayorAmplitud} con {mayorAmplitud} puntos")
 
-# Ejercicio 8
 
-# Utilizo el paquete statistics de python para utilizar funciones
-from statistics import mean
-# Importo modulo random para utilizar metodo randint()
-import random
-# Inicializo lista con dias de la semana
-alumnos = ["Juan", "Pedro", "Cristian", "Maria", "Jorge"]
-materias = ["Programacion", "Matematica", "Sistemas Operativos"]
-# Inicializo lista que va a contener las notas
-notas = []
-# Recorro la cantidad de estudiantes que hay y le cargo notas a la lista
-for alumno in range(len(alumnos)):
-    notas.append([random.randint(1,10),random.randint(1,10),random.randint(1,10)])
-# Calculo el promedio de cada nota para cada materia
-promedioMaterias = [mean([nota[materia] for nota in notas]) for materia in range(len(materias))]
-# Muestro en pantalla a los alumnos con sus notas y sus promedios
-print(f"####################")
-print(f"#  CALIFICACIONES  #")
-print(f"####################\n")
-for alumno, nota in enumerate(notas):
-    promedioAlumno = mean(notas[alumno])
-    print(f" Alumno: {alumnos[alumno]} \n Notas: {notas[alumno]} \n Promedio: {round(promedioAlumno,2)}\n")
-print(f"##############################################")
-print(f"# Promedio de calificaciones de cada materia #")
-print(f"##############################################")
-for materia in range(len(materias)):
-    print(f"           {materias[materia]}: {promedioMaterias[materia]}")
-print(f"##############################################")
+# # Ejercicio 8
+
+# # Utilizo el paquete statistics de python para utilizar funciones
+# from statistics import mean
+# # Importo modulo random para utilizar metodo randint()
+# import random
+# # Inicializo listas con los nombres de los alumnos y con las materias
+# alumnos = ["Juan", "Pedro", "Cristian", "Maria", "Jorge"]
+# materias = ["Programacion", "Matematica", "Sistemas Operativos"]
+# # Inicializo lista que va a contener las notas
+# notas = []
+# # Recorro la cantidad de estudiantes que hay y le cargo notas a la lista
+# for alumno in range(len(alumnos)):
+#     notas.append([random.randint(1,10),random.randint(1,10),random.randint(1,10)])
+# # Calculo el promedio de cada nota para cada materia
+# promedioMaterias = [mean([nota[materia] for nota in notas]) for materia in range(len(materias))]
+# # Muestro en pantalla a los alumnos con sus notas y sus promedios
+# print(f"####################")
+# print(f"#  CALIFICACIONES  #")
+# print(f"####################\n")
+# for alumno, nota in enumerate(notas):
+#     promedioAlumno = mean(notas[alumno])
+#     print(f" Alumno: {alumnos[alumno]} \n Notas: {notas[alumno]} \n Promedio: {round(promedioAlumno,2)}\n")
+# # Muestro en pantalla el promedio de notas de cada materia
+# print(f"##############################################")
+# print(f"# Promedio de calificaciones de cada materia #")
+# print(f"##############################################")
+# for materia in range(len(materias)):
+#     print(f"           {materias[materia]}: {promedioMaterias[materia]}")
+# print(f"##############################################")
+
+
+# Ejercicio 9
+
+# Defino metodo para mostrar matriz tateti
+def MostrarMatriz(matriz):
+    print("\n   0    1    2")
+    for i,fila in enumerate(matriz):
+        print(f"{i}{fila}")
+# Defino metodo para agregar simbolo a la matriz
+def AddSimbolo(fila,columna,simbolo):
+    fila = int(input(f"\nIngrese la fila a ubicar el simbolo '{simbolo}': "))
+    columna = int(input(f"Ingrese la columna a ubicar el simbolo '{simbolo}': "))
+    tateti[fila][columna] = simbolo
+# Inicializo el tateti con el formato
+tateti=[["-","-","-"],
+        ["-","-","-"],
+        ["-","-","-"]]
+# Inicializo variables de turno y eleccionFin
+turno = 1
+print("Bienvenidos al juego del TA-TE-TI")
+accion = int(input("1. Jugar\n2. Salir\n Respuesta: "))
+if (accion == 1):
+        MostrarMatriz(tateti)
+        for fila in range(len(tateti)):
+            for columna in range(len(tateti[fila])):
+                print(f"\n# Turno del jugador {turno} #")
+                if (turno == 1):
+                    AddSimbolo(fila,columna,simbolo="X")
+                    MostrarMatriz(tateti)
+                    turno += 1
+                else:
+                    AddSimbolo(fila,columna,simbolo="O")
+                    MostrarMatriz(tateti)
+                    turno -= 1
+
+
+
