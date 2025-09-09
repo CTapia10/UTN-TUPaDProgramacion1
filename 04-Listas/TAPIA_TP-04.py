@@ -122,3 +122,62 @@
 #         elif (respuesta == 2):
 #             listaAlumnos.remove(input(f"Ingrese el alumno que desea eliminar de la lista: "))
 # print(f"\n# Lista de alumnos presentes final: {sorted(listaAlumnos)} #")
+
+# # Ejercicio 6
+# # Importo modulo random para utilizar metodo randint()
+# import random
+# listaRandint = []
+# listaRotada = []
+# # Defino lista con 7 numeros al azar
+# for i in range(0,7):
+#     listaRandint.append(random.randint(1,100))
+#     # Guardo en listaRotada lo mismo que listaRandint
+#     listaRotada.append(listaRandint[i])
+# # Saco el ultimo numero de la lista y lo guardo en variable ultimoNum
+# ultimoNum = listaRotada.pop()
+# # Agrego el ultimo numero de la lista al principio
+# listaRotada.insert(0,ultimoNum)
+# print(f"Lista con datos repetidos : {listaRandint}")
+# print(f"Lista sin datos repetidos : {listaRotada}")
+
+# # Ejercicio 7
+
+# # Utilizo el paquete statistics de python para utilizar funciones
+# from statistics import mean
+# # Importo modulo random para utilizar metodo randint()
+# import random
+# # Inicializo lista con dias de la semana
+# semana = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"]
+# # Inicializo lista anidada
+# lista_temperaturas = []
+# # Inicializo variables de temperatura minima y maxima
+# maxTemp = -1
+# minTemp = 41
+# mayorAmplitud = 0
+# diaMayorAmplitud = ""
+# # Recorro cada dia de la semana y genero las temperaturas
+# for dia in range(len(semana)):
+#     lista_temperaturas.append([random.randint(0,15),random.randint(16,40)])
+#     # Calculo la amplitud y la guardo en la variable junto a su dia correspondiente
+#     amplitudDia = (lista_temperaturas[dia][1] - lista_temperaturas[dia][0])
+#     if (amplitudDia > mayorAmplitud):
+#         mayorAmplitud = amplitudDia
+#         diaMayorAmplitud = semana[dia]
+#     # Si la temperatura del dia supera la maxima la guardo como temperatura maxima
+#     if (lista_temperaturas[dia][0] > maxTemp):
+#         maxTemp = lista_temperaturas[dia][0]
+#     # Si la temperatura del dia supera la minima la guardo como temperatura minima
+#     if (lista_temperaturas[dia][1] < minTemp):
+#         minTemp = lista_temperaturas[dia][1] 
+# # Defino listas con todas las temperaturas maximas y minimas
+# maximas = [max[1] for max in lista_temperaturas]
+# minimas = [min[0] for min in lista_temperaturas]
+# # Calculo el promedio de las temperaturas y lo guardo en su variable
+# promedioMax = mean(maximas)
+# promedioMin = mean(minimas)
+# # Recorro la lista de temperaturas usando su indice para saber que dia es e imprimir su temperatura minima y maxima
+# for i, fila in enumerate(lista_temperaturas):
+#     print(f"Dia: {semana[i]}, minima: {fila[0]}, maxima: {fila[1]} ")
+# print(f"El promedio de temperaturas maximas es: {round(promedioMax,2)} grados")
+# print(f"El promedio de temperaturas minimas es: {round(promedioMin,2)} grados")
+# print(f"El dia con mayor amplitud termica fue el {diaMayorAmplitud} con {mayorAmplitud} puntos")
