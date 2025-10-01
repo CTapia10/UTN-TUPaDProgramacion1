@@ -20,7 +20,7 @@ def informacion_personal(nombre, apellido, edad, residencia):
 
 # Ejercicio 4
 # Defino funciones para calcular area de un circulo y calcular perimetro del circulo segun el radio ingresado 
-def get_area_y_perimetro_circulo(radio):
+def mostrar_area_y_perimetro_circulo(radio):
     import math
     # Obtengo el valor de PI
     pi = math.pi
@@ -36,6 +36,43 @@ def get_area_y_perimetro_circulo(radio):
     # LLamo a las funciones para imprimir los resultados
     calcular_area_circulo()
     calcular_perimetro_circulo()
+    
+
+# Ejercicio 5
+# Defino funcion segundos a horas
+def segundos_a_horas(segundos):
+        horas = round((segundos / 3600),2)
+        print(f"La cantidad de horas para los segundos ingresados es: {horas}")
+        
+
+# Ejercicio 6
+# Defino funcion que imprime toda la tabla de multiplicar del numero ingresado
+def tabla_multiplicar(numero):
+    for i in range(1,11):
+        multiplicacion = (i * numero)
+        print(f"{i} * {numero} = {multiplicacion} ")
+
+
+# Ejercicio 7
+# Defino funcion que va a realizar las operaciones basicas
+def operaciones_basicas(a,b):
+    # Realizo las operaciones y las guardo en sus respectivas variables
+    suma = (a + b)
+    resta = (a - b)
+    multiplicacion = (a * b)
+    division = round((a / b),2)
+    
+    # Tupla para guardar resultados para cada operacion
+    operacion_y_total = (("Suma", suma), ("Resta", resta), ("Multiplicacion", multiplicacion), ("Division", division))
+    # Recorro la tupla por operacion y resultado
+    for operacion, resultado in operacion_y_total:
+        print(f"El resultado de la operacion {operacion} es {resultado}")
+
+
+
+
+
+
 
 
 # Defino el programa principal #
@@ -44,6 +81,9 @@ def programa_principal():
     # imprimir_hola_mundo()    
     # saludar_usuario(input("Ingrese su nombre: "))
     # informacion_personal(input("Ingrese su nombre: "),input("Ingrese su apellido: "),input("Ingrese su edad: "),input("Ingrese su residencia: "))
-    get_area_y_perimetro_circulo(float(input("Ingrese el radio para calcular area y perimetro de un circulo: ")))
+    # mostrar_area_y_perimetro_circulo(float(input("Ingrese el radio para calcular area y perimetro de un circulo: ")))
+    #segundos_a_horas(int(input("Ingrese la cantidad de segundos para transformar a horas: ")))
+    #tabla_multiplicar(int(input(f"Ingrese un numero entero para mostrar su tabla de multiplicar del 1 al 10: ")))
+    operaciones_basicas(int(input("Ingrese el primer numero para realizar operaciones basicas: ")),int(input("Ingrese el segundo numero: ")))
 # Ejecuto el programa principal #
 programa_principal()
