@@ -12,6 +12,7 @@ def imprimir_hola_mundo():
 def saludar_usuario(nombre):
     print(f"Hola {nombre}, bienvenido/a!")  
 
+
 # Ejercicio 3
 # Defino funcion para solicitar la informacion personal del usuario
 def informacion_personal(nombre, apellido, edad, residencia):
@@ -69,21 +70,41 @@ def operaciones_basicas(a,b):
         print(f"El resultado de la operacion {operacion} es {resultado}")
 
 
+# Ejercicio 8 
+# Defino funcion para calcular el imc del usuario
+def calcular_imc(peso, altura):
+    imc = round(peso / (altura ** 2),2)
+    print(f"Su indice de masa corporal es: {imc}")
 
 
+# Ejercicio 9
+# Defino funcion para pasar la temperatura recibida en grados celcius a fahrenheit
+def celsius_a_fahrenheit(celsius):
+    fahrenheit = round(((celsius * 9/5) + 32),2)
+    print(f"La temperatura en Fahrenheit equivalente a {celsius}°C es: {fahrenheit}°F")
 
 
+# Ejercicio 10
+def calcular_promedio(a,b,c):
+    promedio = round(((a+b+c)/3),2)
+    print(f"El promedio de los numeros ingresados es de: {promedio}")
 
+##############################################################################
+## TODO: Documentar bien todo, hacer mas robusto el codigo con validaciones ##
+##############################################################################
 
 # Defino el programa principal #
 def programa_principal():
     # Llamo a la funcion que imprime hola mundo
-    # imprimir_hola_mundo()    
+     imprimir_hola_mundo()    
     # saludar_usuario(input("Ingrese su nombre: "))
     # informacion_personal(input("Ingrese su nombre: "),input("Ingrese su apellido: "),input("Ingrese su edad: "),input("Ingrese su residencia: "))
     # mostrar_area_y_perimetro_circulo(float(input("Ingrese el radio para calcular area y perimetro de un circulo: ")))
-    #segundos_a_horas(int(input("Ingrese la cantidad de segundos para transformar a horas: ")))
-    #tabla_multiplicar(int(input(f"Ingrese un numero entero para mostrar su tabla de multiplicar del 1 al 10: ")))
-    operaciones_basicas(int(input("Ingrese el primer numero para realizar operaciones basicas: ")),int(input("Ingrese el segundo numero: ")))
+    # segundos_a_horas(int(input("Ingrese la cantidad de segundos para transformar a horas: ")))
+    # tabla_multiplicar(int(input(f"Ingrese un numero entero para mostrar su tabla de multiplicar del 1 al 10: ")))
+    # operaciones_basicas(int(input("Ingrese el primer numero para realizar operaciones basicas: ")),int(input("Ingrese el segundo numero: ")))
+    # calcular_imc(int(input("Ingrese su peso en KG: ")),float(input("Ingrese su altura en metros: ")))
+    # celsius_a_fahrenheit(float(input("Ingrese la temperatura en grados Celsius que desea convertir a Fahrenheit: ")))
+    # calcular_promedio(int(input("Ingrese el primer numero: ")),int(input("Ingrese el segundo numero: ")),int(input("Ingrese el tercer numero: ")))
 # Ejecuto el programa principal #
 programa_principal()
