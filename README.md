@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:306998,100:FFD43B&height=180&section=header&text=Proyecto%20de%20Virtualización%20con%20Python%20🐍&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:306998,100:FFD43B&height=180&section=header&text=Prácticas%20de%20Python%20🐍&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=35" />
 </p>
 
 ---
